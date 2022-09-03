@@ -76,7 +76,7 @@ class _MyWorkState extends State<MyWork> {
                           ),
                           TextButton
                             (onPressed: (){
-                            final Uri _url = Uri.parse('https://drive.google.com/file/d/1yx2UntwEeFGgRfCRrk7w2j-t3ACZ6imY/view?usp=sharing');
+                            final Uri _url = Uri.parse('https://drive.google.com/file/d/1BP_-k3dcWWZBcrUhoOvLoW8QveixvGG1/view?usp=sharing');
                             launchUrl(_url);
                           },
                             child: Text('Certificate',style: TextStyle(fontSize: 16),),
@@ -144,7 +144,7 @@ class _MyWorkState extends State<MyWork> {
                           ),
                           TextButton
                             (onPressed: (){
-                            final Uri _url = Uri.parse('https://drive.google.com/file/d/1yx2UntwEeFGgRfCRrk7w2j-t3ACZ6imY/view?usp=sharing');
+                            final Uri _url = Uri.parse('https://drive.google.com/file/d/1BP_-k3dcWWZBcrUhoOvLoW8QveixvGG1/view?usp=sharing');
                             launchUrl(_url);
                           },
                             child: Text('Certificate',style: TextStyle(fontSize: 16),),
@@ -212,7 +212,7 @@ class _MyWorkState extends State<MyWork> {
                           ),
                           TextButton
                             (onPressed: (){
-                            final Uri _url = Uri.parse('https://drive.google.com/file/d/1yx2UntwEeFGgRfCRrk7w2j-t3ACZ6imY/view?usp=sharing');
+                            final Uri _url = Uri.parse('https://drive.google.com/file/d/1zL9F26FwR8acMXLB0JKCL3gjPVjy9NgK/view?usp=sharing');
                             launchUrl(_url);
                           },
                             child: Text('Certificate',style: TextStyle(fontSize: 16),),

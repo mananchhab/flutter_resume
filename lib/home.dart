@@ -141,8 +141,8 @@ class _MyHomeState extends State<MyHome> {
                   },
                   blendMode: BlendMode.dstIn,
                   child: Image.asset(
-                    'images/manan.jpg',
-                    fit: BoxFit.contain,
+                    'images/m1.jpg',
+
                   ),
                 ),
               ),
@@ -188,7 +188,7 @@ class _MyHomeState extends State<MyHome> {
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                      function1('4', 'Projects'),
+                      function1('7', 'Projects'),
                       function1('3', 'Internships'),
                     ],
                   ),
