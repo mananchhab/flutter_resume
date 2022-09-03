@@ -64,7 +64,16 @@ class _AboutUsState extends State<AboutUs> {
                       child: Text('Resume',style: TextStyle(fontSize: 16),),
                       style: TextButton.styleFrom(backgroundColor: Colors.white,primary: Colors.black),
                     ),
+
                   ),
+                  TextButton
+                    (onPressed: (){
+                   Navigator.pushNamed(context, 'contact');
+                  },
+                    child: Text('Contact Me',style: TextStyle(fontSize: 19),),
+                    style: TextButton.styleFrom(backgroundColor: Colors.white,primary: Colors.black),
+                  ),
+
                   SizedBox(
                     height: 100,
                   ),

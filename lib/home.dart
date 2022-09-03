@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:resume/about.dart';
 import 'package:sliding_sheet/sliding_sheet.dart';
 
 class MyHome extends StatefulWidget {
@@ -66,6 +67,49 @@ class _MyHomeState extends State<MyHome> {
       appBar: AppBar(
         elevation: 0,
         backgroundColor: Colors.transparent,
+        leading: PopupMenuButton(
+          color: Colors.black,
+          itemBuilder: (context) => [
+            PopupMenuItem(
+                child: TextButton(
+                    onPressed: () {
+                      Navigator.pushNamed(context, 'about');
+                    },
+                    child: Text(
+                      'About',
+                      style: TextStyle(
+                          color: Colors.white,
+                          backgroundColor: Colors.transparent,
+                          fontStyle: FontStyle.italic),
+                    ),
+                ),
+            ),
+            PopupMenuItem(
+                child: TextButton(
+                    onPressed: () {
+                      Navigator.pushNamed(context, 'work');
+                    },
+                    child: Text(
+                      'Work',
+                      style: TextStyle(
+                          color: Colors.white,
+                          backgroundColor: Colors.transparent,
+                          fontStyle: FontStyle.italic),
+                    ))),
+            PopupMenuItem(
+                child: TextButton(
+                    onPressed: () {
+                      Navigator.pushNamed(context, 'workexperience');
+                    },
+                    child: Text(
+                      'Work Experience',
+                      style: TextStyle(
+                          color: Colors.white,
+                          backgroundColor: Colors.transparent,
+                          fontStyle: FontStyle.italic),
+                    )))
+          ],
+        ),
       ),
       body: SlidingSheet(
         elevation: 8,
@@ -85,41 +129,52 @@ class _MyHomeState extends State<MyHome> {
           child: Stack(
             children: [
               Container(
-                child: ShaderMask
-                  (shaderCallback: (rect) { return
-                  LinearGradient(
-                    begin: Alignment.center,
-                      end: Alignment.bottomCenter,
-                      colors:[ Colors.black ,Colors.transparent]).createShader(Rect.fromLTRB(0, 0, rect.width, rect.height),);
-                },
+                child: ShaderMask(
+                  shaderCallback: (rect) {
+                    return LinearGradient(
+                            begin: Alignment.center,
+                            end: Alignment.bottomCenter,
+                            colors: [Colors.black, Colors.transparent])
+                        .createShader(
+                      Rect.fromLTRB(0, 0, rect.width, rect.height),
+                    );
+                  },
                   blendMode: BlendMode.dstIn,
-                  child: Image.asset('images/manan.jpg',fit: BoxFit.contain,)
-                  ,),
+                  child: Image.asset(
+                    'images/manan.jpg',
+                    fit: BoxFit.contain,
+                  ),
+                ),
               ),
               Container(
                 alignment: Alignment.center,
-                margin: EdgeInsets.only(top: MediaQuery.of(context).size.height*0.49),
+                margin: EdgeInsets.only(
+                    top: MediaQuery.of(context).size.height * 0.49),
                 child: Column(
                   children: [
-                    Text("Manan Chhabra",style: TextStyle(color: Colors.white,
-                      fontSize: 40,
-                      fontWeight: FontWeight.bold,
-                    ),
+                    Text(
+                      "Manan Chhabra",
+                      style: TextStyle(
+                        color: Colors.white,
+                        fontSize: 40,
+                        fontWeight: FontWeight.bold,
+                      ),
                     ),
                     SizedBox(
                       height: 2,
                     ),
-                    Text("Developer",style: TextStyle(color: Colors.white,
-                      fontSize: 20,
-                    ),
+                    Text(
+                      "Developer",
+                      style: TextStyle(
+                        color: Colors.white,
+                        fontSize: 20,
+                      ),
                     )
                   ],
-                  
                 ),
               ),
             ],
           ),
-
         ),
         builder: (context, state) {
           // This is the content of the sheet that will get
@@ -146,7 +201,6 @@ class _MyHomeState extends State<MyHome> {
                   ),
                   Column(
                     children: [
-
                       Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
@@ -155,7 +209,6 @@ class _MyHomeState extends State<MyHome> {
                           function2(Icons.android, 'Flutter'),
                           function2(Icons.web, 'Web Dev'),
                         ],
-
                       ),
                       Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -165,7 +218,6 @@ class _MyHomeState extends State<MyHome> {
                           function2(Icons.javascript, 'Java'),
                           function2(Icons.adobe, 'Adobe'),
                         ],
-
                       ),
                       Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -175,9 +227,7 @@ class _MyHomeState extends State<MyHome> {
                           function2(Icons.analytics, 'Bi Analyst'),
                           function2(Icons.language, 'Python'),
                         ],
-
                       )
-
                     ],
                   )
                 ],
