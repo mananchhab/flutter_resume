@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:resume/about.dart';
 import 'package:sliding_sheet/sliding_sheet.dart';
+import 'package:video_player/video_player.dart';
 
 class MyHome extends StatefulWidget {
   const MyHome({Key? key}) : super(key: key);
@@ -9,6 +10,7 @@ class MyHome extends StatefulWidget {
   @override
   State<MyHome> createState() => _MyHomeState();
 }
+
 
 class _MyHomeState extends State<MyHome> {
   function1(num, type) {
@@ -63,62 +65,84 @@ class _MyHomeState extends State<MyHome> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.black,
-      extendBodyBehindAppBar: true,
       appBar: AppBar(
-        elevation: 0,
-        backgroundColor: Colors.transparent,
-        leading: PopupMenuButton(
-          color: Colors.black,
-          itemBuilder: (context) => [
-            PopupMenuItem(
-                child: TextButton(
-                    onPressed: () {
-                      Navigator.pushNamed(context, 'about');
-                    },
-                    child: Text(
-                      'About',
-                      style: TextStyle(
-                          color: Colors.white,
-                          backgroundColor: Colors.transparent,
-                          fontStyle: FontStyle.italic),
-                    ),
+        centerTitle: true,
+        title: const Text(
+          'Flutter Developer',
+        ),
+        backgroundColor: const Color(0xff262628),
+      ),
+
+      drawer: Drawer(
+        child: ListView(
+          // Important: Remove any padding from the ListView.
+          padding: EdgeInsets.zero,
+          children: [
+            const UserAccountsDrawerHeader( // <-- SEE HERE
+              decoration: BoxDecoration(color: const Color(0xff262628)),
+              accountName: Text(
+                "Manan Chhabra",
+                style: TextStyle(
+                  fontWeight: FontWeight.bold,
                 ),
+              ),
+              accountEmail: Text(
+                "mananchhabra16@gmail.com",
+                style: TextStyle(
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
+              currentAccountPicture: FaIcon(FontAwesomeIcons.m,size: 70,color: Colors.white,),
             ),
-            PopupMenuItem(
-                child: TextButton(
-                    onPressed: () {
-                      Navigator.pushNamed(context, 'work');
-                    },
-                    child: Text(
-                      'Work',
-                      style: TextStyle(
-                          color: Colors.white,
-                          backgroundColor: Colors.transparent,
-                          fontStyle: FontStyle.italic),
-                    ))),
-            PopupMenuItem(
-                child: TextButton(
-                    onPressed: () {
-                      Navigator.pushNamed(context, 'workexperience');
-                    },
-                    child: Text(
-                      'Work Experience',
-                      style: TextStyle(
-                          color: Colors.white,
-                          backgroundColor: Colors.transparent,
-                          fontStyle: FontStyle.italic),
-                    )))
+            ListTile(
+              leading: Icon(
+                Icons.star_border_purple500,
+              ),
+              title: const Text('About Us'),
+              onTap: () {
+                Navigator.pushNamed(context, 'about');
+              },
+            ),
+            ListTile(
+              leading: Icon(
+                Icons.star_border_purple500,
+              ),
+              title: const Text('Work'),
+              onTap: () {
+                Navigator.pushNamed(context, 'work');
+              },
+            ),
+            ListTile(
+              leading: Icon(
+                Icons.star_border_purple500,
+              ),
+              title: const Text('Work Experience'),
+              onTap: () {
+                Navigator.pushNamed(context, 'workexperience');
+              },
+            ),
+            ListTile(
+              leading: Icon(
+                Icons.star_border_purple500,
+              ),
+              title: const Text('Contact'),
+              onTap: () {
+                Navigator.pushNamed(context, 'contact');
+              },
+            ),
           ],
         ),
       ),
-      body: SlidingSheet(
+
+      body:
+      SlidingSheet(
         elevation: 8,
         cornerRadius: 50,
         snapSpec: const SnapSpec(
           // Enable snapping. This is true by default.
           snap: true,
           // Set custom snapping points.
-          snappings: [0.38, 0.7, 1.0],
+          snappings: [0.30, 0.7, 1.0],
           // Define to what the snappings relate to. In this case,
           // the total available space that the sheet can expand to.
           positioning: SnapPositioning.relativeToAvailableSpace,
@@ -141,7 +165,7 @@ class _MyHomeState extends State<MyHome> {
                   },
                   blendMode: BlendMode.dstIn,
                   child: Image.asset(
-                    'images/m1.jpg',
+                    'images/manan.jpg',
 
                   ),
                 ),
